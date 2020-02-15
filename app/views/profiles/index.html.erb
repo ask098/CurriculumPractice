@@ -1,0 +1,19 @@
+<% @profiles.each do |d | %>
+
+<p>
+    <div>
+        <label> Name:  </label>
+        <%= d.user.name%>
+    </div>
+    <div>
+        <label> Profession  </label>
+        <%= d.user.profession%>
+    </div>
+    <div>
+        <label> summary:  </label>
+        <%= d.user.summary%>
+    </div>
+</p>
+
+<% end %>
+
