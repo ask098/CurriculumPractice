@@ -1,0 +1,30 @@
+<%= form_for [@profile,@experience] do |form | %>
+
+    <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, placeholder:"title" %>
+    </div>
+    
+    <div class="field">
+    <%= form.label :industry %>
+    <%= form.text_field :industry, placeholder:"industry" %>
+    </div>
+      <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, placeholder:"description" %>
+    </div>
+ 
+    <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date, placeholder:"start date" %>
+    </div> 
+
+    <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_field :start_date, placeholder:"end date" %>
+    </div> 
+
+    <div class="actions">
+    <%= form.submit %>
+    </div>
+<%end%>

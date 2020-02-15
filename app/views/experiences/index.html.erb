@@ -1,0 +1,30 @@
+<% @profile.experiences.each do |experience| %>
+
+<p>
+    <div>
+        <label> Title:  </label>
+        <%= experience.title%>
+    </div>
+
+    <div>
+        <label> Industry:  </label>
+        <%= experience.industry%>
+    </div>
+
+    <div>
+        <label> Description:  </label>
+        <%= experience.description%>
+    </div>
+    <div>
+        <label> start date:  </label>
+        <%= experience.start_date%>
+    </div>
+
+    <div>
+        <label> end date:  </label>
+        <%= experience.end_date%>
+    </div>
+</p>
+
+<% end %>
+

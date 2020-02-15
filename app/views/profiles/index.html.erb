@@ -1,18 +1,26 @@
-<% @profiles.each do |d | %>
+<% @profiles.each do |profile| %>
 
 <p>
     <div>
         <label> Name:  </label>
-        <%= d.user.name%>
+        <%= profile.user.name%>
     </div>
     <div>
         <label> Profession  </label>
-        <%= d.user.profession%>
+        <%= profile.user.profession%>
     </div>
     <div>
         <label> summary:  </label>
-        <%= d.user.summary%>
+        <%= profile.user.summary%>
     </div>
+
+    <div>
+        <label> summary:  </label>
+        <div>
+            <%= image_tag(profile.user.image, style: "width: 100px") %>
+        </div>
+    </div>
+
 </p>
 
 <% end %>
