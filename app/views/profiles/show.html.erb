@@ -1,6 +1,4 @@
 
-
-
 <div>
         <%= image_tag(@profile.user.image, style: "width: 100px") %>
 </div>
@@ -10,26 +8,35 @@
         <%= @profile.user.name %>
 </div>
 
-
 <div>
         <label> Profession:  </label>
         <%= @profile.user.profession %>
 </div>
-
 
 <div>
         <label> Summary:  </label>
         <%= @profile.user.summary %>
 </div>
 
+<% if user_signed_in? && current_user.id == @profile.user.id %>
+        <%= link_to "Edit", "/profiles/#{@profile.id}/edit", method: :post %>
+         <%= link_to "edit2", edit_user_registration_path %><br />
+        <%= link_to "Delete", @profile, method: :delete %>
+        <%= link_to 'Back', profiles_path %>
+        <% current_user %>
+        <% elsif user_signed_in? %>
+                <%= link_to 'Back', "/" %>
+        <% elsif %>
+        <%= link_to "Sign up", new_user_registration_path %> 
+        <%= link_to "Login", new_user_session_path %>
+    
+<% end %>
 
-
-<%= button_to "Delete", @profile, method: :delete %>
-
-<%= button_to "Edit", "/profiles/#{@profile.id}/edit", method: :get %>
 
 <h1> Experiences </h1>
-
+<p><% if user_signed_in? && current_user.id == @profile.user.id %>
+        <%= link_to "Add experience", "/profiles/#{params[:id]}/experiences/new", method: :post %>
+<% end %></p>
 <table>
   <thead style= text-align:center;>
   

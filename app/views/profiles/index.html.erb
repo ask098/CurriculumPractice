@@ -2,6 +2,12 @@
 
 <p>
     <div>
+        <label> summary:  </label>
+        <div>
+            <%= image_tag(profile.user.image, style: "width: 100px") %>
+        </div>
+    </div>
+    <div>
         <label> Name:  </label>
         <%= profile.user.name%>
     </div>
@@ -13,15 +19,9 @@
         <label> summary:  </label>
         <%= profile.user.summary%>
     </div>
-
-    <div>
-        <label> summary:  </label>
-        <div>
-            <%= image_tag(profile.user.image, style: "width: 100px") %>
-        </div>
-    </div>
-
 </p>
+
+<a><%= link_to 'More details', profile %></a>
 
 <% end %>
 

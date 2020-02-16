@@ -21,6 +21,23 @@ class ProfilesController < ApplicationController
         end
     end
 
+    def destroy
+        @profile = Profile.find(params[:id])
+        if @profile.destroy
+            flash[:success] = 'Object was successfully deleted.'
+            redirect_to "/profiles"
+        else
+            flash[:error] = 'Something went wrong'
+            redirect_to "/profiles"
+        end
+    end
+
+    def edit
+        @profile = Profile.find(params[:id])
+    end
+    
+    
+
     private
 
     def profile_paramsjoim 
