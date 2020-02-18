@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
         if @profile.save
             flash[:success] = "Object successfully created"
         else
-            render :new
+            redirect_to "/profiles"
         end
     end
 
@@ -35,12 +35,24 @@ class ProfilesController < ApplicationController
     def edit
         @profile = Profile.find(params[:id])
     end
+
+    def update
+        @profile = Profile.find(params[:id])
+        if @profile.update_attributes(params[:profile_params])
+          flash[:success] = "Object was successfully updated"
+          redirect_to "/profiles/#{:id}/edit"
+        else
+          flash[:error] = "Something went wrong"
+          render 'edit'
+        end
+    end
+    
     
     
 
     private
 
-    def profile_paramsjoim 
+    def profile_params
         params.require(:profile).permit(:user_id)
     end
 

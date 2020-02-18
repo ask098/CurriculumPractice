@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :experiences
   end
   
+  
   root to: "profiles#index"
 end

@@ -20,7 +20,6 @@
 
 <% if user_signed_in? && current_user.id == @profile.user.id %>
         <%= link_to "Edit", "/profiles/#{@profile.id}/edit", method: :post %>
-         <%= link_to "edit2", edit_user_registration_path %><br />
         <%= link_to "Delete", @profile, method: :delete %>
         <%= link_to 'Back', profiles_path %>
         <% current_user %>
