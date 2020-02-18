@@ -12,12 +12,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    if super.save
-      flash[:success] = "Object successfully created"
-      redirect_to "/profiles/new"
-    else
-        redirect_to "/profiles"
-    end
+    # if super.save
+    #   flash[:success] = "Object successfully created"
+    #   redirect_to "/profiles/new"
+    # else
+    #     redirect_to "/profiles"
+    # end
   end
 
   # GET /resource/edit
