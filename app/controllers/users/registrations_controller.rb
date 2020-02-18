@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  POST /resource
+  # POST /resource
   def create
     super
     if super.save
